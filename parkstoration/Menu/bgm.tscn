@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cvqf1bndgxvt5"]
+
+[ext_resource type="AudioStream" uid="uid://dxfbgmuiyltug" path="res://Audio/m-art_TeaParty.mp3" id="1_8vd7d"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" unique_id=622338917]
+stream = ExtResource("1_8vd7d")
+autoplay = true
