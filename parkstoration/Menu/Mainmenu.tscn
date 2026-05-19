@@ -71,11 +71,9 @@ Parkstoration"
 
 [node name="move" type="AudioStreamPlayer" parent="." unique_id=2028195894]
 stream = ExtResource("2_hm1c7")
-bus = &"sfx"
 
 [node name="pick" type="AudioStreamPlayer" parent="." unique_id=989569636]
 stream = ExtResource("3_kpjom")
-bus = &"sfx"
 
 [node name="start_timer" type="Timer" parent="." unique_id=1650986158]
 wait_time = 0.2

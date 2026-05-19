@@ -21,6 +21,7 @@ buses/default_bus_layout="uid://b7a6q4gidbn51"
 [autoload]
 
 Bgm="*uid://cvqf1bndgxvt5"
+Savedata="*uid://cv6evb3av18re"
 
 [input]
 

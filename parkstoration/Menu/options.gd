@@ -7,6 +7,7 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$ColorRect/Container/VBoxContainer/bgm.grab_focus()
+	$ColorRect/Container/VBoxContainer/bgm.value = Savedata.BGM
 
 
 
@@ -38,3 +39,9 @@ func _on_back_focus_exited() -> void:
 
 func _on_back_timer_timeout() -> void:
 	get_tree().change_scene_to_file("res://Menu/Mainmenu.tscn")
+
+
+func _on_bgm_value_changed(value: float) -> void:
+	Savedata.BGM = $ColorRect/Container/VBoxContainer/bgm.value
+	Savedata.save_volume()
+	Savedata.update_volume()

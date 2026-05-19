@@ -42,22 +42,18 @@ layout_mode = 2
 [node name="Label" type="Label" parent="ColorRect/Container/VBoxContainer" unique_id=711219055]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
-text = "BGM volume"
+text = "Volume"
 
 [node name="bgm" type="HSlider" parent="ColorRect/Container/VBoxContainer" unique_id=2108984262]
 custom_minimum_size = Vector2(100, 20)
 layout_mode = 2
-
-[node name="Label2" type="Label" parent="ColorRect/Container/VBoxContainer" unique_id=1057002531]
-layout_mode = 2
-theme_override_font_sizes/font_size = 24
-text = "SFX volume"
-
-[node name="sfx" type="HSlider" parent="ColorRect/Container/VBoxContainer" unique_id=882611569]
-layout_mode = 2
+focus_neighbor_top = NodePath("../back")
+min_value = -50.0
+max_value = 50.0
 
 [node name="back" type="Button" parent="ColorRect/Container/VBoxContainer" unique_id=798236280]
 layout_mode = 2
+focus_neighbor_bottom = NodePath("../bgm")
 theme_override_font_sizes/font_size = 24
 text = "Back"
 
@@ -73,8 +69,7 @@ wait_time = 0.2
 [connection signal="changed" from="ColorRect/Container/VBoxContainer/bgm" to="." method="_on_bgm_changed"]
 [connection signal="drag_ended" from="ColorRect/Container/VBoxContainer/bgm" to="." method="_on_bgm_drag_ended"]
 [connection signal="focus_exited" from="ColorRect/Container/VBoxContainer/bgm" to="." method="_on_bgm_focus_exited"]
-[connection signal="drag_ended" from="ColorRect/Container/VBoxContainer/sfx" to="." method="_on_sfx_drag_ended"]
-[connection signal="focus_exited" from="ColorRect/Container/VBoxContainer/sfx" to="." method="_on_sfx_focus_exited"]
+[connection signal="value_changed" from="ColorRect/Container/VBoxContainer/bgm" to="." method="_on_bgm_value_changed"]
 [connection signal="focus_exited" from="ColorRect/Container/VBoxContainer/back" to="." method="_on_back_focus_exited"]
 [connection signal="pressed" from="ColorRect/Container/VBoxContainer/back" to="." method="_on_back_pressed"]
 [connection signal="timeout" from="back_timer" to="." method="_on_back_timer_timeout"]
