@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://521eu8ud08ha"]
+
+[node name="Control" type="Control" unique_id=1470410027]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1589953363]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.6, 0.8980392, 0.3137255, 1)
+
+[node name="Container" type="Container" parent="ColorRect" unique_id=1571104496]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -51.0
+offset_right = 36.0
+offset_bottom = 51.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/Container" unique_id=1386771291]
+layout_mode = 2
+
+[node name="start" type="Button" parent="ColorRect/Container/VBoxContainer" unique_id=172763745]
+layout_mode = 2
+text = "Start"
+
+[node name="options" type="Button" parent="ColorRect/Container/VBoxContainer" unique_id=1780814549]
+layout_mode = 2
+text = "Options"
+
+[node name="quit" type="Button" parent="ColorRect/Container/VBoxContainer" unique_id=732224944]
+layout_mode = 2
+text = "Quit"
