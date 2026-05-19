@@ -1,0 +1,31 @@
+[gd_scene format=4 uid="uid://bg1vmcmeahiak"]
+
+[ext_resource type="Script" uid="uid://c2owl5o3l64rb" path="res://plant_box.gd" id="1_nv2go"]
+[ext_resource type="TileSet" uid="uid://kdgammrjjv7s" path="res://Ground_Tiles.tres" id="2_6jtgi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_77t7n"]
+size = Vector2(78, 45)
+
+[node name="PlantBox" type="Node2D" unique_id=1280437189]
+script = ExtResource("1_nv2go")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1131323415]
+position = Vector2(-32, 0)
+tile_map_data = PackedByteArray("AAD//wAABgABAAUAAAD/////BgABAAUAAAD///7/BgABAAQAAAD//wEABgABAAQAACAAAP7/BgACAAQAAAABAP7/BgACAAQAAAACAP7/BgACAAQAAAADAP7/BgACAAQAAAAAAAEABgACAAQAACABAAEABgACAAQAACACAAEABgACAAQAACADAAEABgACAAQAACAEAP7/BgADAAQAAAAEAAEABgADAAQAACAEAP//BgADAAUAAAAEAAAABgADAAUAAAAAAP//BgACAAUAAAAAAAAABgACAAUAAAABAAAABgACAAUAAAACAAAABgACAAUAAAADAAAABgACAAUAAAADAP//BgACAAUAAAACAP//BgACAAUAAAABAP//BgACAAUAAAA=")
+tile_set = ExtResource("2_6jtgi")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1612226995]
+collision_layer = 16384
+collision_mask = 16384
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=766794858]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_77t7n")
+
+[node name="Timer" type="Timer" parent="." unique_id=1064750468]
+wait_time = 3.0
+autostart = true
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

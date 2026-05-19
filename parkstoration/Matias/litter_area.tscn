@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dqhwd3uvfalmf"]
+
+[ext_resource type="Script" uid="uid://bhhel6f38ly7p" path="res://Matias/litter_area.gd" id="1_eqkh5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q5qa1"]
+size = Vector2(300, 150)
+
+[node name="LitterArea" type="Node2D" unique_id=500217056]
+script = ExtResource("1_eqkh5")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1333651714]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1379229230]
+shape = SubResource("RectangleShape2D_q5qa1")
+disabled = true

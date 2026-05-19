@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://c2pncl4x4w4ga"]
+
+[ext_resource type="Texture2D" uid="uid://ctnwha2n42aea" path="res://custom sprites/Litter.png" id="1_jasuk"]
+[ext_resource type="Script" uid="uid://cb70rw5uvd0c5" path="res://Matias/litter.gd" id="1_mbwpp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jasuk"]
+radius = 5.0
+
+[node name="Litter" type="Node2D" unique_id=1996470237]
+script = ExtResource("1_mbwpp")
+
+[node name="Litter" type="Sprite2D" parent="." unique_id=1042551461]
+texture = ExtResource("1_jasuk")
+
+[node name="collection_area" type="Area2D" parent="." unique_id=1848209172]
+collision_layer = 32768
+collision_mask = 32768
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="collection_area" unique_id=2031924173]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_jasuk")
+
+[connection signal="area_entered" from="collection_area" to="." method="_on_collection_area_area_entered"]
+[connection signal="area_exited" from="collection_area" to="." method="_on_collection_area_area_exited"]
