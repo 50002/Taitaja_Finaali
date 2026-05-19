@@ -29,10 +29,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -74.5
-offset_top = -81.5
-offset_right = 74.5
-offset_bottom = 81.5
+offset_left = -53.75
+offset_top = -46.25
+offset_right = 53.75
+offset_bottom = 46.25
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -41,20 +41,18 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="ColorRect/Container/VBoxContainer" unique_id=711219055]
 layout_mode = 2
-theme_override_font_sizes/font_size = 24
 text = "Volume"
 
 [node name="bgm" type="HSlider" parent="ColorRect/Container/VBoxContainer" unique_id=2108984262]
 custom_minimum_size = Vector2(100, 20)
 layout_mode = 2
 focus_neighbor_top = NodePath("../back")
-min_value = -50.0
-max_value = 50.0
+min_value = -10.0
+max_value = 10.0
 
 [node name="back" type="Button" parent="ColorRect/Container/VBoxContainer" unique_id=798236280]
 layout_mode = 2
 focus_neighbor_bottom = NodePath("../bgm")
-theme_override_font_sizes/font_size = 24
 text = "Back"
 
 [node name="move" type="AudioStreamPlayer" parent="." unique_id=287718336]
