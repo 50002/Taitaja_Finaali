@@ -14,7 +14,7 @@ texture_filter = 1
 [node name="Player" parent="." unique_id=2071136870 instance=ExtResource("2_feb5d")]
 z_index = 1
 position = Vector2(310, 135)
-Role = 0
+Role = 1
 
 [node name="LitterArea" parent="." unique_id=500217056 instance=ExtResource("3_feb5d")]
 position = Vector2(160, 240)

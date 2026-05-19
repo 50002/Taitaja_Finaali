@@ -59,7 +59,11 @@ func spawn(type: String) -> void:
 		Flower_List.insert(0, trash)
 	print(get_children())
 	
-
+func Delete(node) -> void:
+	var idx = Flower_List.find(node)
+	Flower_List.pop_at(idx)
+	node.queue_free()
+	
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 		if area.name == "Interaction":

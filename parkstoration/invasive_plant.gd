@@ -10,7 +10,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Player_in_range and Input.is_action_just_pressed("INTERACTION"):
-		queue_free()
+		get_parent().Delete(self)
 
 
 func _on_collection_area_area_entered(area: Area2D) -> void:
