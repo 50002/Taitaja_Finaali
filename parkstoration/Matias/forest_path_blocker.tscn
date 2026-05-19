@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://dtjjk704gs5h"]
+
+[ext_resource type="Script" uid="uid://dyltyoxsginwa" path="res://Matias/forest_path_blocker.gd" id="1_5tqto"]
+[ext_resource type="Texture2D" uid="uid://b5dxlooh18hr7" path="res://All free tiles.png" id="1_k6i82"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5tqto"]
+radius = 33.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5tqto"]
+size = Vector2(50, 26)
+
+[node name="Forest Path Blocker" type="Node2D" unique_id=241607062]
+script = ExtResource("1_5tqto")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1243157339]
+position = Vector2(-24, -1)
+rotation = 0.7853982
+scale = Vector2(4, 4)
+texture = ExtResource("1_k6i82")
+region_enabled = true
+region_rect = Rect2(144, 208, 16, 16)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1524554340]
+collision_layer = 32768
+collision_mask = 32768
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=435137224]
+position = Vector2(-12, 0)
+shape = SubResource("CircleShape2D_5tqto")
+
+[node name="RigidBody2D" type="CharacterBody2D" parent="." unique_id=374128164]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=2068489834]
+position = Vector2(-25, -1)
+shape = SubResource("RectangleShape2D_5tqto")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

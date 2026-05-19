@@ -1,3 +1,27 @@
 [gd_scene format=3 uid="uid://52vio3j1m3v6"]
 
+[ext_resource type="PackedScene" uid="uid://wa3s23bktjad" path="res://Matias/map.tscn" id="1_e2o6t"]
+[ext_resource type="PackedScene" uid="uid://bpq0hh4gpuy0b" path="res://Matias/Player.tscn" id="2_feb5d"]
+[ext_resource type="PackedScene" uid="uid://dqhwd3uvfalmf" path="res://Matias/litter_area.tscn" id="3_feb5d"]
+[ext_resource type="PackedScene" uid="uid://dtjjk704gs5h" path="res://Matias/forest_path_blocker.tscn" id="4_fc0e3"]
+[ext_resource type="PackedScene" uid="uid://bg1vmcmeahiak" path="res://Matias/plant_box.tscn" id="5_7jktm"]
+
 [node name="Game" type="Node2D" unique_id=691730007]
+texture_filter = 1
+
+[node name="Map" parent="." unique_id=1067666997 instance=ExtResource("1_e2o6t")]
+
+[node name="Player" parent="." unique_id=2071136870 instance=ExtResource("2_feb5d")]
+z_index = 1
+position = Vector2(310, 135)
+Role = 0
+
+[node name="LitterArea" parent="." unique_id=500217056 instance=ExtResource("3_feb5d")]
+position = Vector2(160, 240)
+
+[node name="Forest Path Blocker" parent="." unique_id=241607062 instance=ExtResource("4_fc0e3")]
+modulate = Color(0.4090745, 0.36598805, 0.32627675, 1)
+position = Vector2(476, 190)
+
+[node name="PlantBox" parent="." unique_id=1280437189 instance=ExtResource("5_7jktm")]
+position = Vector2(270, 17)
