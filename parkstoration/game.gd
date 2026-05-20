@@ -1,6 +1,9 @@
 extends Node2D
 
 
+var player1
+var player2
+
 var keyboard = preload("res://Matias/Player.tscn")
 var controller1 = preload("res://Matias/Controller_Player.tscn")
 var controller2 = preload("res://Matias/Controller_Player2.tscn")
@@ -28,10 +31,19 @@ func _ready() -> void:
 		player.global_position = Vector2(320.0, 280.0)
 		player.Role = 1
 		players.add_child(player)
+	
+	await get_tree().process_frame
+	await get_tree().process_frame
+	player1 = players.get_children()[0]
+	player2 = players.get_children()[1]
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
+	if player1 and player2:
+		print((player1.position.y + player2.position.y)/2)
+		$Camera2D.global_position.y = max(min(100, (player1.position.y + player2.position.y)/2 -200), -300)
 	if GameManager.Tasks == {"Pick up trash": true, "Replace Invasive flowers with native ones": true, "Fix the shelter": true, "Fully unblock the forest path": true}:
 		get_tree().change_scene_to_file("res://Menu/win.tscn")
 	
