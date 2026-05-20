@@ -12,5 +12,10 @@ func _process(delta: float) -> void:
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
+	$AudioStreamPlayer.play()
 	GameManager.Has_Tools = true
+	$Timer.start()
+
+
+func _on_timer_timeout() -> void:
 	queue_free()

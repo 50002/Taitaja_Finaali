@@ -1,7 +1,8 @@
-[gd_scene format=3 uid="uid://t4ommx2qgqgq"]
+[gd_scene format=3 uid="uid://bqdda4gee0fnn"]
 
 [ext_resource type="Script" uid="uid://dvtf72dlhslw3" path="res://Matias/tool_box.gd" id="1_m6daj"]
 [ext_resource type="Texture2D" uid="uid://i4duyp5b0x4i" path="res://16x16/toolbox.png" id="2_oqrfg"]
+[ext_resource type="AudioStream" uid="uid://b5e3x8mky5k6p" path="res://Audio/DSGNTonl_STEP-Toony Step_HY_PC-005.wav" id="3_oqrfg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ww76w"]
 radius = 14.0
@@ -17,5 +18,12 @@ texture = ExtResource("2_oqrfg")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=30132209]
 shape = SubResource("CircleShape2D_ww76w")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=761684433]
+stream = ExtResource("3_oqrfg")
+
+[node name="Timer" type="Timer" parent="." unique_id=2038828976]
+wait_time = 0.2
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

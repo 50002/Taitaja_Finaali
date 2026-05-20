@@ -29,6 +29,7 @@ func _process(delta: float) -> void:
 				$Node2D.visible = true
 				$Sprite2D/Area2D/CollisionShape2D.disabled = true
 				GameManager.Tasks["Fully unblock the forest path"] = true
+				$AudioStreamPlayer.play()
 	elif locked == false:
 		rotation = move_toward(rotation, 0, 10*delta)
 		

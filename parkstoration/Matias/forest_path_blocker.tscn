@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dyltyoxsginwa" path="res://Matias/forest_path_blocker.gd" id="1_5tqto"]
 [ext_resource type="Texture2D" uid="uid://b5dxlooh18hr7" path="res://All free tiles.png" id="1_k6i82"]
 [ext_resource type="Texture2D" uid="uid://s31amalv8wie" path="res://mystic_woods_free_2.2/sprites/objects/objects.png" id="3_74v81"]
+[ext_resource type="AudioStream" uid="uid://dc40w2hmqe6jd" path="res://Audio/DSGNTonl_STEP-Toony Step_HY_PC-003.wav" id="4_qcyh5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5tqto"]
 radius = 33.0
@@ -92,6 +93,9 @@ position = Vector2(-24, -41)
 texture = ExtResource("3_74v81")
 region_enabled = true
 region_rect = Rect2(2, 3, 12, 7)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1749828818]
+stream = ExtResource("4_qcyh5")
 
 [connection signal="area_entered" from="Sprite2D/Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Sprite2D/Area2D" to="." method="_on_area_2d_area_exited"]
