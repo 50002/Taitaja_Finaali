@@ -8,5 +8,5 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if  GameManager.Tasks["Replace Invasive flowers with native ones"] == true:
+	if GameManager.Tasks["Pick up trash"] == true:
 		value = 1

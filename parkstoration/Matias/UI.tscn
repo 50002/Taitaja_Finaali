@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://nc54ukdncr12" path="res://Matias/pathbar.gd" id="3_6nqo6"]
 [ext_resource type="Script" uid="uid://daol6gi1l537" path="res://Matias/flowerAreaBar.gd" id="4_qfo42"]
 [ext_resource type="Script" uid="uid://dmvhc0aksg52t" path="res://Matias/clearing.gd" id="5_qfo42"]
+[ext_resource type="Script" uid="uid://bku31sd1df2be" path="res://Matias/beach.gd" id="6_kyaij"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_phar0"]
 bg_color = Color(1, 0, 0, 1)
@@ -20,7 +21,7 @@ texture_filter = 1
 layout_mode = 3
 anchors_preset = 0
 offset_right = 246.0
-offset_bottom = 135.0
+offset_bottom = 149.0
 theme = ExtResource("2_phar0")
 
 [node name="ColorRect" type="ColorRect" parent="Control" unique_id=2107644524]
@@ -80,16 +81,10 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 size_flags_stretch_ratio = 1.21
-max_value = 2.0
+max_value = 1.0
 step = 1.0
 show_percentage = false
 script = ExtResource("4_qfo42")
-
-[node name="CheckBox" type="CheckBox" parent="Control/VBoxContainer" unique_id=908566999]
-layout_mode = 2
-focus_mode = 0
-button_mask = 0
-text = "Pick up trash"
 
 [node name="CheckBox2" type="CheckBox" parent="Control/VBoxContainer" unique_id=2100546622]
 layout_mode = 2
@@ -123,6 +118,31 @@ focus_mode = 0
 button_mask = 0
 text = "Fix the shelter"
 
+[node name="HBoxContainer4" type="HBoxContainer" parent="Control/VBoxContainer" unique_id=1984994091]
+layout_mode = 2
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Control/VBoxContainer/HBoxContainer4" unique_id=403448213]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Pond beach"
+fit_content = true
+
+[node name="ProgressBar" type="ProgressBar" parent="Control/VBoxContainer/HBoxContainer4" unique_id=197468966]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 1.21
+max_value = 1.0
+step = 1.0
+show_percentage = false
+script = ExtResource("6_kyaij")
+
+[node name="CheckBox" type="CheckBox" parent="Control/VBoxContainer" unique_id=908566999]
+layout_mode = 2
+focus_mode = 0
+button_mask = 0
+text = "Pick up trash"
+
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=630617076]
 anchors_preset = 10
 anchor_right = 1.0
@@ -145,9 +165,9 @@ autostart = true
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=1366307609]
 self_modulate = Color(1, 1, 1, 0.4392157)
-offset_top = 136.0
+offset_top = 149.0
 offset_right = 246.0
-offset_bottom = 163.0
+offset_bottom = 176.0
 theme_override_colors/font_color = Color(0.95, 0.95, 0.95, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
