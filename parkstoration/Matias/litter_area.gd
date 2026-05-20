@@ -11,7 +11,7 @@ func _ready() -> void:
 		var trash = litter.instantiate()
 		trash.pos = positioning
 		add_child(trash)
-		print(positioning)
+		
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -15,7 +15,7 @@ func _ready() -> void:
 		spawn("BAD")
 		
 func _process(delta: float) -> void:
-	if Player_in_range and Input.is_action_just_pressed("INTERACTION"):
+	if Player_in_range and (Input.is_action_just_pressed("INTERACTION") or Input.is_action_just_pressed("C_INTERACT") or Input.is_action_just_pressed("CI2")):
 		if get_child_count() < 18:
 			spawn("GOOD")
 	
@@ -24,12 +24,11 @@ func _process(delta: float) -> void:
 
 func _on_timer_timeout() -> void:
 	if Completed == false:
-		print("BB")
-		print(Flower_List.has("*"))
+		
 		if get_child_count() < 18:
 			spawn("BAD")
 		else:
-			print("AA")
+			
 			Flower_List[-1].queue_free()
 			Flower_List.pop_back()
 			spawn("BAD")
@@ -57,7 +56,7 @@ func spawn(type: String) -> void:
 		Flower_List.append(trash)
 	else:
 		Flower_List.insert(0, trash)
-	print(get_children())
+	
 	
 func Delete(node) -> void:
 	var idx = Flower_List.find(node)

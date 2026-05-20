@@ -11,9 +11,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Player_in_range and Input.is_action_pressed("INTERACTION"):
+	if Player_in_range and (Input.is_action_pressed("INTERACTION") or Input.is_action_pressed("C_INTERACT") or Input.is_action_pressed("CI2")):
 		if rotation < deg_to_rad(90):
 			player.global_position = global_position + Vector2(0, 10)
+			player.velocity = Vector2.ZERO
 			rotation = move_toward(rotation, deg_to_rad(90), 10*delta)
 	elif locked == false:
 		rotation = move_toward(rotation, 0, 10*delta)
