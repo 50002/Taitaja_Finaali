@@ -1,6 +1,7 @@
-[gd_scene format=3 uid="uid://bmv0rmkey6arj"]
+[gd_scene format=3 uid="uid://bll5fjgihgca6"]
 
-[ext_resource type="Script" uid="uid://vginpyymqkxi" path="res://Menu/lose.gd" id="1_l2gf6"]
+[ext_resource type="Theme" uid="uid://baoxle8m6yjef" path="res://Matias/text.tres" id="1_1f3yg"]
+[ext_resource type="Script" path="res://Menu/lose.gd" id="1_l2gf6"]
 [ext_resource type="AudioStream" uid="uid://b882c6pxp000l" path="res://Audio/UIClick_INTERFACE-Metallic Click_HY_PC-006.wav" id="2_vnele"]
 
 [node name="Control" type="Control" unique_id=294622429]
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_1f3yg")
 script = ExtResource("1_l2gf6")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1856678686]
@@ -37,6 +39,7 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="ColorRect/VBoxContainer" unique_id=256838156]
 layout_mode = 2
+theme_override_font_sizes/font_size = 32
 text = "You ran out of time"
 
 [node name="Button" type="Button" parent="ColorRect/VBoxContainer" unique_id=1972385806]

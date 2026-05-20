@@ -1,6 +1,7 @@
-[gd_scene format=3 uid="uid://cvrafj0cphwof"]
+[gd_scene format=3 uid="uid://cfv0w67a4anxt"]
 
-[ext_resource type="Script" uid="uid://ch4x30t45g4e5" path="res://Menu/load_screen.gd" id="1_1x1ot"]
+[ext_resource type="Script" path="res://Menu/load_screen.gd" id="1_1x1ot"]
+[ext_resource type="Theme" uid="uid://baoxle8m6yjef" path="res://Matias/text.tres" id="1_vr05n"]
 
 [node name="Control" type="Control" unique_id=1391489640]
 layout_mode = 3
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_vr05n")
 script = ExtResource("1_1x1ot")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=656475251]

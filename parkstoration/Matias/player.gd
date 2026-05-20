@@ -2,6 +2,7 @@ extends CharacterBody2D
 @onready var A: AnimatedSprite2D = $AnimatedSprite2D
 @onready var interaction: Area2D = $Interaction
 @export_enum("Repair", "Exterminator") var Role
+@onready var timer: Timer = $Timer
 
 
 const SPEED = 200.0
@@ -25,17 +26,20 @@ func _ready() -> void:
 		if child.has_method("initialize"):
 			child.initialize(self)
 
+
+
 func _physics_process(delta: float) -> void:
 	match player_state:
 		STATE.IDLE:
+			timer.stop()
 			A.play("IDLE")
 		STATE.MOVING:
+			if timer.is_stopped():
+				timer.start()
 			A.play("MOVING")
 		STATE.INTERACT:
+			timer.stop()
 			A.play("INTERACTING")
-			
-	
-	
 	
 	if movement() and player_state != STATE.INTERACT:
 		player_state = STATE.MOVING
@@ -58,3 +62,7 @@ func movement():
 		if Input.is_action_pressed(i):
 			return true
 	return false
+
+
+func _on_timer_timeout() -> void:
+	$Timer/AudioStreamPlayer.play()

@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c4ihb4dkb02g" path="res://16x16/16x16 Idle-Sheet.png" id="2_3po7e"]
 [ext_resource type="Texture2D" uid="uid://cv1os3kvwwq6d" path="res://16x16/16x16 Interact-Sheet.png" id="3_hyo75"]
 [ext_resource type="Texture2D" uid="uid://cmrbc84jrranu" path="res://16x16/16x16 Run-Sheet.png" id="4_86b72"]
+[ext_resource type="AudioStream" uid="uid://3yduef5ld5s1" path="res://Audio/walk.wav" id="5_3po7e"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0jp61"]
 atlas = ExtResource("2_3po7e")
@@ -139,3 +140,11 @@ sprite_frames = SubResource("SpriteFrames_pd14q")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="INTERACT" unique_id=1848023951]
 sprite_frames = SubResource("SpriteFrames_t8d7c")
+
+[node name="Timer" type="Timer" parent="." unique_id=280253633]
+wait_time = 0.33
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Timer" unique_id=564870493]
+stream = ExtResource("5_3po7e")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

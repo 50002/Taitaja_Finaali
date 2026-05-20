@@ -19,6 +19,7 @@ func _process(delta: float) -> void:
 	if Player_in_range and (Input.is_action_just_pressed("INTERACTION") or Input.is_action_just_pressed("C_INTERACT") or Input.is_action_just_pressed("CI2")) and can_plant:
 		if get_child_count() < 26:
 			spawn("GOOD")
+			$AudioStreamPlayer.play()
 			can_plant = false
 			timer_2.start()
 	

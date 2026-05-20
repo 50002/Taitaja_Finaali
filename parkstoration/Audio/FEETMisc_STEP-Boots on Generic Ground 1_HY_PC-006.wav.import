@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b34oqpasv7ro"
+path="res://.godot/imported/FEETMisc_STEP-Boots on Generic Ground 1_HY_PC-006.wav-34caeedebd00cb9e820ccbf5d83012d7.sample"
+
+[deps]
+
+source_file="res://Audio/FEETMisc_STEP-Boots on Generic Ground 1_HY_PC-006.wav"
+dest_files=["res://.godot/imported/FEETMisc_STEP-Boots on Generic Ground 1_HY_PC-006.wav-34caeedebd00cb9e820ccbf5d83012d7.sample"]
+
+[params]
+
+force/8_bit=true
+force/mono=false
+force/max_rate=true
+force/max_rate_hz=11025.0
+edit/trim=true
+edit/normalize=false
+edit/loop_mode=1
+edit/loop_begin=0
+edit/loop_end=10000
+compress/mode=0
