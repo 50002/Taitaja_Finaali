@@ -2,6 +2,15 @@
 
 [ext_resource type="Script" uid="uid://cxu61gvpx4qsq" path="res://Matias/ui.gd" id="1_da340"]
 [ext_resource type="Theme" uid="uid://baoxle8m6yjef" path="res://Matias/text.tres" id="2_phar0"]
+[ext_resource type="Script" uid="uid://nc54ukdncr12" path="res://Matias/pathbar.gd" id="3_6nqo6"]
+[ext_resource type="Script" uid="uid://daol6gi1l537" path="res://Matias/flowerAreaBar.gd" id="4_qfo42"]
+[ext_resource type="Script" uid="uid://dmvhc0aksg52t" path="res://Matias/clearing.gd" id="5_qfo42"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_phar0"]
+bg_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jul6o"]
+bg_color = Color(0, 1, 0, 1)
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=22516259]
 script = ExtResource("1_da340")
@@ -32,10 +41,24 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = -3
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="Control/VBoxContainer" unique_id=45783625]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/VBoxContainer" unique_id=1098561429]
 layout_mode = 2
-text = "Forest"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Control/VBoxContainer/HBoxContainer" unique_id=45783625]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Forest Path"
 fit_content = true
+
+[node name="ProgressBar" type="ProgressBar" parent="Control/VBoxContainer/HBoxContainer" unique_id=1124055632]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 1.21
+max_value = 1.0
+step = 1.0
+show_percentage = false
+script = ExtResource("3_6nqo6")
 
 [node name="CheckBox4" type="CheckBox" parent="Control/VBoxContainer" unique_id=85074891]
 layout_mode = 2
@@ -43,10 +66,24 @@ focus_mode = 0
 button_mask = 0
 text = "Fully unblock the forest path"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control/VBoxContainer" unique_id=1735756843]
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/VBoxContainer" unique_id=730133046]
 layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/VBoxContainer/HBoxContainer2" unique_id=1735756843]
+layout_mode = 2
+size_flags_horizontal = 3
 text = "Flower area"
 fit_content = true
+
+[node name="ProgressBar2" type="ProgressBar" parent="Control/VBoxContainer/HBoxContainer2" unique_id=1399995251]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 1.21
+max_value = 2.0
+step = 1.0
+show_percentage = false
+script = ExtResource("4_qfo42")
 
 [node name="CheckBox" type="CheckBox" parent="Control/VBoxContainer" unique_id=908566999]
 layout_mode = 2
@@ -61,10 +98,24 @@ button_mask = 0
 text = "Replace Invasive flowers 
 with native ones"
 
-[node name="RichTextLabel3" type="RichTextLabel" parent="Control/VBoxContainer" unique_id=1331226870]
+[node name="HBoxContainer3" type="HBoxContainer" parent="Control/VBoxContainer" unique_id=1622902993]
 layout_mode = 2
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Control/VBoxContainer/HBoxContainer3" unique_id=1331226870]
+layout_mode = 2
+size_flags_horizontal = 3
 text = "Clearing"
 fit_content = true
+
+[node name="ProgressBar3" type="ProgressBar" parent="Control/VBoxContainer/HBoxContainer3" unique_id=1474684777]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 1.21
+max_value = 1.0
+step = 1.0
+show_percentage = false
+script = ExtResource("5_qfo42")
 
 [node name="CheckBox3" type="CheckBox" parent="Control/VBoxContainer" unique_id=1435848318]
 layout_mode = 2
@@ -91,5 +142,32 @@ horizontal_alignment = 1
 
 [node name="Timer" type="Timer" parent="." unique_id=2039795559]
 autostart = true
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1366307609]
+self_modulate = Color(1, 1, 1, 0.4392157)
+offset_top = 136.0
+offset_right = 246.0
+offset_bottom = 163.0
+theme_override_colors/font_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_styles/background = SubResource("StyleBoxFlat_phar0")
+theme_override_styles/fill = SubResource("StyleBoxFlat_jul6o")
+max_value = 4.0
+step = 1.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="ProgressBar" unique_id=1999579737]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 2.0
+offset_right = -4.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

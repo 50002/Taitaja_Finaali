@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b0vm5tgsko8dg" path="res://shelter.gd" id="1_qeob6"]
 [ext_resource type="Texture2D" uid="uid://cypte8rmbwunc" path="res://16x16/cottage.png" id="2_fumub"]
 [ext_resource type="Texture2D" uid="uid://dha610gf0fu7t" path="res://16x16/cottage_fixed.png" id="3_fumub"]
+[ext_resource type="AudioStream" uid="uid://dc40w2hmqe6jd" path="res://Audio/DSGNTonl_STEP-Toony Step_HY_PC-003.wav" id="4_qqq88"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qqq88"]
 radius = 49.010204
@@ -38,6 +39,9 @@ collision_mask = 7
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=970926747]
 position = Vector2(0.5, 6)
 shape = SubResource("ConvexPolygonShape2D_qeob6")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=172313988]
+stream = ExtResource("4_qqq88")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
