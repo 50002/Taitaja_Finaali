@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://bmv0rmkey6arj"]
+
+[ext_resource type="Script" uid="uid://vginpyymqkxi" path="res://Menu/lose.gd" id="1_l2gf6"]
+[ext_resource type="AudioStream" uid="uid://b882c6pxp000l" path="res://Audio/UIClick_INTERFACE-Metallic Click_HY_PC-006.wav" id="2_vnele"]
+
+[node name="Control" type="Control" unique_id=294622429]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l2gf6")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1856678686]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.6, 0.8980392, 0.3137255, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect" unique_id=536775577]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer" unique_id=256838156]
+layout_mode = 2
+text = "You ran out of time"
+
+[node name="Button" type="Button" parent="ColorRect/VBoxContainer" unique_id=1972385806]
+layout_mode = 2
+text = "Back"
+
+[node name="Timer" type="Timer" parent="." unique_id=582400434]
+
+[node name="pick" type="AudioStreamPlayer" parent="." unique_id=191125997]
+stream = ExtResource("2_vnele")
+pitch_scale = 0.2
+
+[connection signal="focus_exited" from="ColorRect/VBoxContainer/Button" to="." method="_on_button_focus_exited"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

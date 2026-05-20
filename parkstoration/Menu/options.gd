@@ -7,6 +7,7 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$ColorRect/Container/VBoxContainer/bgm.grab_focus()
+	Savedata.update_volume()
 	$ColorRect/Container/VBoxContainer/bgm.value = Savedata.BGM
 
 
