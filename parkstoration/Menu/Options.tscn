@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://b882c6pxp000l" path="res://Audio/UIClick_INTERFACE-Metallic Click_HY_PC-006.wav" id="2_ty45b"]
 [ext_resource type="AudioStream" uid="uid://hv8widkrpu1g" path="res://Audio/UIClick_INTERFACE-Metallic Click_HY_PC-003.wav" id="3_lg0h4"]
 
-[node name="Control" type="Control" unique_id=2076669759]
+[node name="Control2" type="Control" unique_id=2076669759]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -79,6 +79,7 @@ wait_time = 0.2
 [connection signal="drag_ended" from="ColorRect/Container/VBoxContainer/bgm" to="." method="_on_bgm_drag_ended"]
 [connection signal="focus_exited" from="ColorRect/Container/VBoxContainer/bgm" to="." method="_on_bgm_focus_exited"]
 [connection signal="value_changed" from="ColorRect/Container/VBoxContainer/bgm" to="." method="_on_bgm_value_changed"]
+[connection signal="focus_exited" from="ColorRect/Container/VBoxContainer/OptionButton" to="." method="_on_option_button_focus_exited"]
 [connection signal="item_selected" from="ColorRect/Container/VBoxContainer/OptionButton" to="." method="_on_option_button_item_selected"]
 [connection signal="focus_exited" from="ColorRect/Container/VBoxContainer/back" to="." method="_on_back_focus_exited"]
 [connection signal="pressed" from="ColorRect/Container/VBoxContainer/back" to="." method="_on_back_pressed"]

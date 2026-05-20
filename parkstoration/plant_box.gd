@@ -64,6 +64,7 @@ func spawn(type: String) -> void:
 	
 	
 func Delete(node) -> void:
+	$AudioStreamPlayer2.play()
 	var idx = Flower_List.find(node)
 	Flower_List.pop_at(idx)
 	node.queue_free()
