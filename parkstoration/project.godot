@@ -21,7 +21,21 @@ buses/default_bus_layout="uid://b7a6q4gidbn51"
 [autoload]
 
 Bgm="*uid://cvqf1bndgxvt5"
+<<<<<<< Updated upstream
 Savedata="*uid://cv6evb3av18re"
+=======
+GameManager="*uid://se6wmdutpfm5"
+Savedata="*uid://cv6evb3av18re"
+
+[display]
+
+window/size/viewport_width=640
+window/size/viewport_height=320
+window/size/mode=2
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+window/stretch/scale_mode="integer"
+>>>>>>> Stashed changes
 
 [input]
 
