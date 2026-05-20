@@ -36,14 +36,15 @@ func _physics_process(delta: float) -> void:
 			
 	
 	
-	if Input.is_anything_pressed():
-		if movement() and player_state != STATE.INTERACT:
-			player_state = STATE.MOVING
-			var direction := Input.get_vector("LEFT","RIGHT","UP","DOWN")
-			direction = direction.normalized()
-			if direction:
-				velocity = direction * SPEED
-		elif Input.is_action_pressed("INTERACTION"):
+	
+	if movement() and player_state != STATE.INTERACT:
+		player_state = STATE.MOVING
+		var direction := Input.get_vector("LEFT","RIGHT","UP","DOWN")
+		direction = direction.normalized()
+		if direction:
+			velocity = direction * SPEED
+	elif Input.is_action_pressed("INTERACTION"):
+			velocity = Vector2.ZERO
 			player_state = STATE.INTERACT
 	else:
 		player_state = STATE.IDLE

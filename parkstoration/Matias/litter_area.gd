@@ -11,7 +11,12 @@ func _ready() -> void:
 		var trash = litter.instantiate()
 		trash.pos = positioning
 		add_child(trash)
-		print(positioning)
+		
+		
+func _process(delta: float) -> void:
+	if GameManager.TrasH_Left <= 0:
+		GameManager.Tasks["Pick up trash"] = true
+		queue_free()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

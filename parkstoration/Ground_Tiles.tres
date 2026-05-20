@@ -618,7 +618,8 @@ texture = ExtResource("8_tireq")
 15:12/0 = 0
 
 [resource]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 7
+physics_layer_0/collision_mask = 7
 sources/0 = SubResource("TileSetAtlasSource_tjnal")
 sources/1 = SubResource("TileSetAtlasSource_fl0sj")
 sources/2 = SubResource("TileSetAtlasSource_tireq")

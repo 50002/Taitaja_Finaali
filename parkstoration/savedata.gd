@@ -5,13 +5,16 @@ var BGM = 0
 
 
 func _ready() -> void:
-
 	update_volume()
 
 func update_volume():
+	var err = config.load("user://savedata.cfg")
+	if err != OK:
+		return
+		
 	for volume in config.get_sections():
 		BGM = config.get_value(volume, "BGM")
-		
+		print(BGM)
 	var bgm_index= AudioServer.get_bus_index("Master")
 	AudioServer.set_bus_volume_db(bgm_index, BGM)
 

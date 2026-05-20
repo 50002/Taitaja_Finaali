@@ -1,4 +1,7 @@
 extends Node2D
+@onready var collision_shape_2d: CollisionShape2D = $Sprite2D/RigidBody2D/CollisionShape2D
+@onready var body: CharacterBody2D = $Sprite2D/RigidBody2D
+@onready var area_2d: Area2D = $Sprite2D/Area2D
 
 
 var locked := false
@@ -11,12 +14,24 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Player_in_range and Input.is_action_pressed("INTERACTION"):
+	if GameManager.Has_Tools == true:
+		area_2d.set_collision_layer_value(15, true)
+		
+	if Player_in_range and (Input.is_action_pressed("INTERACTION") or Input.is_action_pressed("C_INTERACT") or Input.is_action_pressed("CI2")):
+		player.global_position = global_position + Vector2(0, 10)
+		player.velocity = Vector2.ZERO
 		if rotation < deg_to_rad(90):
-			player.global_position = global_position + Vector2(0, 10)
 			rotation = move_toward(rotation, deg_to_rad(90), 10*delta)
+		else:
+			if GameManager.Has_Tools == true:
+				collision_shape_2d.disabled = true
+				$Sprite2D.visible = false
+				$Node2D.visible = true
+				$Sprite2D/Area2D/CollisionShape2D.disabled = true
+				GameManager.Tasks["Fully unblock the forest path"] = true
 	elif locked == false:
 		rotation = move_toward(rotation, 0, 10*delta)
+		
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:

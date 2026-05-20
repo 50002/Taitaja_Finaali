@@ -29,10 +29,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -53.75
-offset_top = -46.25
-offset_right = 53.75
-offset_bottom = 46.25
+offset_left = -144.875
+offset_top = -60.125
+offset_right = 144.875
+offset_bottom = 60.125
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -50,16 +50,25 @@ focus_neighbor_top = NodePath("../back")
 min_value = -10.0
 max_value = 10.0
 
+[node name="OptionButton" type="OptionButton" parent="ColorRect/Container/VBoxContainer" unique_id=879070928]
+layout_mode = 2
+selected = 0
+item_count = 2
+popup/item_0/text = "Use one controller, one keyboard"
+popup/item_0/id = 0
+popup/item_1/text = "Use two controllers"
+popup/item_1/id = 1
+
 [node name="back" type="Button" parent="ColorRect/Container/VBoxContainer" unique_id=798236280]
 layout_mode = 2
 focus_neighbor_bottom = NodePath("../bgm")
 text = "Back"
 
 [node name="move" type="AudioStreamPlayer" parent="." unique_id=287718336]
-stream = ExtResource("2_ty45b")
+stream = ExtResource("3_lg0h4")
 
 [node name="pick" type="AudioStreamPlayer" parent="." unique_id=641849550]
-stream = ExtResource("3_lg0h4")
+stream = ExtResource("2_ty45b")
 
 [node name="back_timer" type="Timer" parent="." unique_id=1298149415]
 wait_time = 0.2
@@ -68,6 +77,7 @@ wait_time = 0.2
 [connection signal="drag_ended" from="ColorRect/Container/VBoxContainer/bgm" to="." method="_on_bgm_drag_ended"]
 [connection signal="focus_exited" from="ColorRect/Container/VBoxContainer/bgm" to="." method="_on_bgm_focus_exited"]
 [connection signal="value_changed" from="ColorRect/Container/VBoxContainer/bgm" to="." method="_on_bgm_value_changed"]
+[connection signal="item_selected" from="ColorRect/Container/VBoxContainer/OptionButton" to="." method="_on_option_button_item_selected"]
 [connection signal="focus_exited" from="ColorRect/Container/VBoxContainer/back" to="." method="_on_back_focus_exited"]
 [connection signal="pressed" from="ColorRect/Container/VBoxContainer/back" to="." method="_on_back_pressed"]
 [connection signal="timeout" from="back_timer" to="." method="_on_back_timer_timeout"]

@@ -7,6 +7,7 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$ColorRect/Container/VBoxContainer/bgm.grab_focus()
+	Savedata.update_volume()
 	$ColorRect/Container/VBoxContainer/bgm.value = Savedata.BGM
 
 
@@ -45,3 +46,10 @@ func _on_bgm_value_changed(value: float) -> void:
 	Savedata.BGM = $ColorRect/Container/VBoxContainer/bgm.value
 	Savedata.save_volume()
 	Savedata.update_volume()
+
+
+func _on_option_button_item_selected(index: int) -> void:
+	if index == 0:
+		GameManager.Two_Controllers = false
+	else:
+		GameManager.Two_Controllers = true

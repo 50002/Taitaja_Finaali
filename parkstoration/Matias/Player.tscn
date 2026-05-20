@@ -97,6 +97,7 @@ animations = [{
 radius = 4.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1g285"]
+radius = 15.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1g285"]
 
@@ -104,7 +105,7 @@ radius = 4.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_t8d7c"]
 
-[node name="Player" type="CharacterBody2D" unique_id=2071136870]
+[node name="Keyboard_Player" type="CharacterBody2D" unique_id=2071136870]
 script = ExtResource("1_lgf8l")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=573728952]
