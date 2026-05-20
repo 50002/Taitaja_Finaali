@@ -49,7 +49,12 @@ func _on_bgm_value_changed(value: float) -> void:
 
 
 func _on_option_button_item_selected(index: int) -> void:
+	pick.play()
 	if index == 0:
 		GameManager.Two_Controllers = false
 	else:
 		GameManager.Two_Controllers = true
+
+
+func _on_option_button_focus_exited() -> void:
+	move.play()
