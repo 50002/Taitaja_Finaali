@@ -16,6 +16,7 @@ func _process(delta: float) -> void:
 		state = 0
 		sprite_2d.modulate = Color.WHITE
 		can_2.visible = false
+		$AudioStreamPlayer.play()
 
 
 func _on_collection_area_area_entered(area: Area2D) -> void:
