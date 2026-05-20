@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://cc6hykgpve60k"]
+
+[ext_resource type="Script" uid="uid://bdb1f2f2nnl86" path="res://Menu/win.gd" id="1_3onqf"]
+[ext_resource type="AudioStream" uid="uid://b882c6pxp000l" path="res://Audio/UIClick_INTERFACE-Metallic Click_HY_PC-006.wav" id="2_7dvqf"]
+
+[node name="Control" type="Control" unique_id=130028835]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3onqf")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1016847161]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.6, 0.8980392, 0.3137255, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect" unique_id=1487311117]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer" unique_id=788489107]
+layout_mode = 2
+text = "You cleaned up the park on time."
+
+[node name="Button" type="Button" parent="ColorRect/VBoxContainer" unique_id=1399283893]
+layout_mode = 2
+text = "Back"
+
+[node name="Timer" type="Timer" parent="." unique_id=895591403]
+wait_time = 0.2
+
+[node name="pick" type="AudioStreamPlayer" parent="." unique_id=2057811651]
+stream = ExtResource("2_7dvqf")
+
+[connection signal="pressed" from="ColorRect/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

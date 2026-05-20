@@ -29,10 +29,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -74.5
-offset_top = -81.5
-offset_right = 74.5
-offset_bottom = 81.5
+offset_left = -144.875
+offset_top = -60.125
+offset_right = 144.875
+offset_bottom = 60.125
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -41,27 +41,33 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="ColorRect/Container/VBoxContainer" unique_id=711219055]
 layout_mode = 2
-theme_override_font_sizes/font_size = 24
 text = "Volume"
 
 [node name="bgm" type="HSlider" parent="ColorRect/Container/VBoxContainer" unique_id=2108984262]
 custom_minimum_size = Vector2(100, 20)
 layout_mode = 2
 focus_neighbor_top = NodePath("../back")
-min_value = -50.0
-max_value = 50.0
+min_value = -10.0
+max_value = 10.0
+
+[node name="OptionButton" type="OptionButton" parent="ColorRect/Container/VBoxContainer" unique_id=879070928]
+layout_mode = 2
+item_count = 2
+popup/item_0/text = "Use one controller, one keyboard"
+popup/item_0/id = 0
+popup/item_1/text = "Use two controllers"
+popup/item_1/id = 1
 
 [node name="back" type="Button" parent="ColorRect/Container/VBoxContainer" unique_id=798236280]
 layout_mode = 2
 focus_neighbor_bottom = NodePath("../bgm")
-theme_override_font_sizes/font_size = 24
 text = "Back"
 
 [node name="move" type="AudioStreamPlayer" parent="." unique_id=287718336]
-stream = ExtResource("2_ty45b")
+stream = ExtResource("3_lg0h4")
 
 [node name="pick" type="AudioStreamPlayer" parent="." unique_id=641849550]
-stream = ExtResource("3_lg0h4")
+stream = ExtResource("2_ty45b")
 
 [node name="back_timer" type="Timer" parent="." unique_id=1298149415]
 wait_time = 0.2
