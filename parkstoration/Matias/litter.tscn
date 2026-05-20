@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://ctnwha2n42aea" path="res://custom sprites/Litter.png" id="1_jasuk"]
 [ext_resource type="Script" uid="uid://cb70rw5uvd0c5" path="res://Matias/litter.gd" id="1_mbwpp"]
+[ext_resource type="AudioStream" uid="uid://b5e3x8mky5k6p" path="res://Audio/DSGNTonl_STEP-Toony Step_HY_PC-005.wav" id="3_e1pyk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jasuk"]
 radius = 5.0
@@ -19,6 +20,9 @@ collision_mask = 32768
 [node name="CollisionShape2D" type="CollisionShape2D" parent="collection_area" unique_id=2031924173]
 position = Vector2(0, 4)
 shape = SubResource("CircleShape2D_jasuk")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2074917979]
+stream = ExtResource("3_e1pyk")
 
 [connection signal="area_entered" from="collection_area" to="." method="_on_collection_area_area_entered"]
 [connection signal="area_exited" from="collection_area" to="." method="_on_collection_area_area_exited"]

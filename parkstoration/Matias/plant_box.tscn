@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c2owl5o3l64rb" path="res://plant_box.gd" id="1_nv2go"]
 [ext_resource type="TileSet" uid="uid://kdgammrjjv7s" path="res://Ground_Tiles.tres" id="2_6jtgi"]
 [ext_resource type="AudioStream" uid="uid://b34oqpasv7ro" path="res://Audio/FEETMisc_STEP-Boots on Generic Ground 1_HY_PC-006.wav" id="3_6jtgi"]
+[ext_resource type="AudioStream" uid="uid://b5e3x8mky5k6p" path="res://Audio/DSGNTonl_STEP-Toony Step_HY_PC-005.wav" id="4_77t7n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_77t7n"]
 size = Vector2(200, 100)
@@ -33,6 +34,9 @@ one_shot = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=764895365]
 stream = ExtResource("3_6jtgi")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=1328450856]
+stream = ExtResource("4_77t7n")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
