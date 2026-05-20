@@ -20,5 +20,10 @@ collision_mask = 16384
 position = Vector2(-2, 6)
 shape = SubResource("CircleShape2D_hyue5")
 
+[node name="Timer" type="Timer" parent="." unique_id=51576474]
+wait_time = 5.0
+autostart = true
+
 [connection signal="area_entered" from="collection_area" to="." method="_on_collection_area_area_entered"]
 [connection signal="area_exited" from="collection_area" to="." method="_on_collection_area_area_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dyltyoxsginwa" path="res://Matias/forest_path_blocker.gd" id="1_5tqto"]
 [ext_resource type="Texture2D" uid="uid://b5dxlooh18hr7" path="res://All free tiles.png" id="1_k6i82"]
+[ext_resource type="Texture2D" uid="uid://s31amalv8wie" path="res://mystic_woods_free_2.2/sprites/objects/objects.png" id="3_74v81"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5tqto"]
 radius = 33.0
@@ -20,19 +21,77 @@ texture = ExtResource("1_k6i82")
 region_enabled = true
 region_rect = Rect2(144, 208, 16, 16)
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1524554340]
+[node name="Area2D" type="Area2D" parent="Sprite2D" unique_id=1524554340]
+position = Vector2(4.419418, -4.065864)
+rotation = -0.7853982
+scale = Vector2(0.25, 0.25)
 collision_layer = 32768
 collision_mask = 32768
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=435137224]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D" unique_id=435137224]
 position = Vector2(-12, 0)
 shape = SubResource("CircleShape2D_5tqto")
 
-[node name="RigidBody2D" type="CharacterBody2D" parent="." unique_id=374128164]
+[node name="RigidBody2D" type="CharacterBody2D" parent="Sprite2D" unique_id=374128164]
+position = Vector2(4.419418, -4.065864)
+rotation = -0.7853982
+scale = Vector2(0.25, 0.25)
+collision_layer = 7
+collision_mask = 7
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=2068489834]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/RigidBody2D" unique_id=2068489834]
 position = Vector2(-25, -1)
 shape = SubResource("RectangleShape2D_5tqto")
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[node name="Node2D" type="Node2D" parent="." unique_id=1424973879]
+visible = false
+
+[node name="Sprite2D2" type="Sprite2D" parent="Node2D" unique_id=1839158574]
+z_index = 2
+position = Vector2(-4, -36)
+scale = Vector2(1, 2.7)
+texture = ExtResource("3_74v81")
+region_enabled = true
+region_rect = Rect2(82, 4, 13, 10)
+
+[node name="Sprite2D3" type="Sprite2D" parent="Node2D" unique_id=1737618170]
+z_index = 2
+position = Vector2(-4, -17.25)
+scale = Vector2(1, 3.25)
+texture = ExtResource("3_74v81")
+region_enabled = true
+region_rect = Rect2(82, 4, 13, 10)
+
+[node name="Sprite2D5" type="Sprite2D" parent="Node2D" unique_id=2037653502]
+z_index = 2
+position = Vector2(-43.5, -35.5)
+scale = Vector2(1, 2.7)
+texture = ExtResource("3_74v81")
+region_enabled = true
+region_rect = Rect2(82, 4, 13, 10)
+
+[node name="Sprite2D6" type="Sprite2D" parent="Node2D" unique_id=471645138]
+z_index = 2
+position = Vector2(-43.5, -16.75)
+scale = Vector2(1, 3.25)
+texture = ExtResource("3_74v81")
+region_enabled = true
+region_rect = Rect2(82, 4, 13, 10)
+
+[node name="Sprite2D4" type="Sprite2D" parent="Node2D" unique_id=1760050146]
+z_index = 2
+position = Vector2(-24, -46)
+scale = Vector2(1.6666667, 1)
+texture = ExtResource("3_74v81")
+region_enabled = true
+region_rect = Rect2(161, 1, 30, 11)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D" unique_id=1121109232]
+z_index = 2
+position = Vector2(-24, -41)
+texture = ExtResource("3_74v81")
+region_enabled = true
+region_rect = Rect2(2, 3, 12, 7)
+
+[connection signal="area_entered" from="Sprite2D/Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Sprite2D/Area2D" to="." method="_on_area_2d_area_exited"]

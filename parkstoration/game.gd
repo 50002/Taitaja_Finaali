@@ -18,11 +18,11 @@ func _ready() -> void:
 		add_child(player)
 	else:
 		var player = controller1.instantiate()
-		player.global_position = Vector2(280.0, 280.0)
+		player.global_position = Vector2(260.0, 280.0)
 		player.Role = 0
 		add_child(player)
 		player = controller2.instantiate()
-		player.global_position = Vector2(300.0, 280.0)
+		player.global_position = Vector2(320.0, 280.0)
 		player.Role = 1
 		add_child(player)
 

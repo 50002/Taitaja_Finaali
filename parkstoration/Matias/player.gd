@@ -44,6 +44,7 @@ func _physics_process(delta: float) -> void:
 		if direction:
 			velocity = direction * SPEED
 	elif Input.is_action_pressed("INTERACTION"):
+			velocity = Vector2.ZERO
 			player_state = STATE.INTERACT
 	else:
 		player_state = STATE.IDLE

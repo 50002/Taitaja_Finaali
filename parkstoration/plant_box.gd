@@ -1,4 +1,5 @@
 extends Node2D
+@onready var timer_2: Timer = $Timer2
 
 var a: int=0
 @onready var area: CollisionShape2D = $Area2D/CollisionShape2D
@@ -7,7 +8,7 @@ var Flower_List: Array[Node2D] = []
 var Player_in_range : bool = false
 var bad = preload("res://Matias/invasive_plant.tscn")
 var good = preload("res://Matias/native_plant.tscn")
-
+var can_plant : bool = true
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
@@ -15,12 +16,15 @@ func _ready() -> void:
 		spawn("BAD")
 		
 func _process(delta: float) -> void:
-	if Player_in_range and (Input.is_action_just_pressed("INTERACTION") or Input.is_action_just_pressed("C_INTERACT") or Input.is_action_just_pressed("CI2")):
+	if Player_in_range and (Input.is_action_just_pressed("INTERACTION") or Input.is_action_just_pressed("C_INTERACT") or Input.is_action_just_pressed("CI2")) and can_plant:
 		if get_child_count() < 18:
 			spawn("GOOD")
+			can_plant = false
+			timer_2.start()
 	
 	if Flower_List.filter(func (a):return a.name.contains("GOOD")).size() >= 10:
 		Completed = true
+		GameManager.Tasks["Replace Invasive flowers with native ones"] = true
 
 func _on_timer_timeout() -> void:
 	if Completed == false:
@@ -72,3 +76,8 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	if area.name == "Interaction":
 		Player_in_range = false
+
+
+func _on_timer_2_timeout() -> void:
+	can_plant = true
+	
