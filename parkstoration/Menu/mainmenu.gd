@@ -13,7 +13,7 @@ func _ready() -> void:
 
 func _on_start_pressed() -> void:
 	pick.play()
-
+	start_timer.start()
 
 func _on_options_pressed() -> void:
 	pick.play()
@@ -42,4 +42,4 @@ func _on_options_timer_timeout() -> void:
 
 
 func _on_start_timer_timeout() -> void:
-	pass
+	get_tree().change_scene_to_file("res://Menu/load_screen.tscn")

@@ -53,6 +53,21 @@ layout_mode = 2
 focus_neighbor_bottom = NodePath("../start")
 text = "Quit"
 
+[node name="Label" type="Label" parent="ColorRect" unique_id=608342453]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -114.0
+offset_top = -17.0
+offset_right = 114.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 12
+text = "Change the co-op settings from options"
+
 [node name="move" type="AudioStreamPlayer" parent="." unique_id=2028195894]
 stream = ExtResource("2_hm1c7")
 
