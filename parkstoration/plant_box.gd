@@ -17,19 +17,19 @@ func _ready() -> void:
 		
 func _process(delta: float) -> void:
 	if Player_in_range and (Input.is_action_just_pressed("INTERACTION") or Input.is_action_just_pressed("C_INTERACT") or Input.is_action_just_pressed("CI2")) and can_plant:
-		if get_child_count() < 18:
+		if get_child_count() < 26:
 			spawn("GOOD")
 			can_plant = false
 			timer_2.start()
 	
-	if Flower_List.filter(func (a):return a.name.contains("GOOD")).size() >= 10:
+	if Flower_List.filter(func (a):return a.name.contains("GOOD")).size() >= 20:
 		Completed = true
 		GameManager.Tasks["Replace Invasive flowers with native ones"] = true
 
 func _on_timer_timeout() -> void:
 	if Completed == false:
 		
-		if get_child_count() < 18:
+		if get_child_count() < 26:
 			spawn("BAD")
 		else:
 			
@@ -51,7 +51,7 @@ func spawn(type: String) -> void:
 		NAME = "GOOD"
 	
 	
-	var positioning = Vector2( randf_range((area.global_position.x-37),(area.global_position.x+37)), randf_range((area.global_position.y-22),(area.global_position.y+22)))
+	var positioning = Vector2( randf_range((area.global_position.x-100),(area.global_position.x+100)), randf_range((area.global_position.y-50),(area.global_position.y+50)))
 	var trash = litter.instantiate()
 	trash.pos = positioning
 	trash.name = str( NAME)

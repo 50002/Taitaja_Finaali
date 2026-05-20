@@ -1,0 +1,11 @@
+[gd_resource type="Theme" format=3 uid="uid://baoxle8m6yjef"]
+
+[ext_resource type="FontFile" uid="uid://vcrqhmc5sm12" path="res://ThaleahFat/ThaleahFat.ttf" id="1_388lx"]
+
+[resource]
+default_font = ExtResource("1_388lx")
+default_font_size = 16
+CheckBox/colors/checkbox_unchecked_color = Color(1, 1, 1, 1)
+CheckBox/colors/font_color = Color(0, 0, 0, 1)
+RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
+RichTextLabel/colors/font_outline_color = Color(1, 1, 1, 1)

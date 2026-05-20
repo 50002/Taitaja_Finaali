@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://521eu8ud08ha"]
 
 [ext_resource type="Script" uid="uid://6cwpwk4m447j" path="res://Menu/mainmenu.gd" id="1_f1h8f"]
+[ext_resource type="Theme" uid="uid://baoxle8m6yjef" path="res://Matias/text.tres" id="1_kpjom"]
 [ext_resource type="AudioStream" uid="uid://hv8widkrpu1g" path="res://Audio/UIClick_INTERFACE-Metallic Click_HY_PC-003.wav" id="2_hm1c7"]
 [ext_resource type="AudioStream" uid="uid://b882c6pxp000l" path="res://Audio/UIClick_INTERFACE-Metallic Click_HY_PC-006.wav" id="3_kpjom"]
 
@@ -11,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_kpjom")
 script = ExtResource("1_f1h8f")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1589953363]

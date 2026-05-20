@@ -1,6 +1,7 @@
-[gd_scene format=3 uid="uid://cc6hykgpve60k"]
+[gd_scene format=3 uid="uid://hcgifnde4bbh"]
 
-[ext_resource type="Script" uid="uid://bdb1f2f2nnl86" path="res://Menu/win.gd" id="1_3onqf"]
+[ext_resource type="Script" path="res://Menu/win.gd" id="1_3onqf"]
+[ext_resource type="Theme" uid="uid://baoxle8m6yjef" path="res://Matias/text.tres" id="1_s3gny"]
 [ext_resource type="AudioStream" uid="uid://b882c6pxp000l" path="res://Audio/UIClick_INTERFACE-Metallic Click_HY_PC-006.wav" id="2_7dvqf"]
 
 [node name="Control" type="Control" unique_id=130028835]
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_s3gny")
 script = ExtResource("1_3onqf")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1016847161]
@@ -37,6 +39,7 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="ColorRect/VBoxContainer" unique_id=788489107]
 layout_mode = 2
+theme_override_font_sizes/font_size = 32
 text = "You cleaned up the park on time."
 
 [node name="Button" type="Button" parent="ColorRect/VBoxContainer" unique_id=1399283893]

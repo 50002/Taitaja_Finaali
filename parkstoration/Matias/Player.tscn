@@ -97,6 +97,7 @@ animations = [{
 radius = 4.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1g285"]
+radius = 15.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1g285"]
 

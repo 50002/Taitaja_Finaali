@@ -12,6 +12,7 @@ func _ready() -> void:
 
 
 func _on_start_pressed() -> void:
+	GameManager.Reset()
 	pick.play()
 	start_timer.start()
 
