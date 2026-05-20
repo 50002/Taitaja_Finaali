@@ -55,6 +55,7 @@ max_value = 10.0
 [node name="OptionButton" type="OptionButton" parent="ColorRect/Container/VBoxContainer" unique_id=879070928]
 layout_mode = 2
 selected = 0
+allow_reselect = true
 item_count = 2
 popup/item_0/text = "Use one controller, one keyboard"
 popup/item_0/id = 0

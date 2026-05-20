@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://daol6gi1l537" path="res://Matias/flowerAreaBar.gd" id="4_qfo42"]
 [ext_resource type="Script" uid="uid://dmvhc0aksg52t" path="res://Matias/clearing.gd" id="5_qfo42"]
 [ext_resource type="Script" uid="uid://bku31sd1df2be" path="res://Matias/beach.gd" id="6_kyaij"]
+[ext_resource type="FontFile" uid="uid://vcrqhmc5sm12" path="res://ThaleahFat/ThaleahFat.ttf" id="7_8o1xb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_phar0"]
 bg_color = Color(1, 0, 0, 1)
@@ -165,9 +166,9 @@ autostart = true
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=1366307609]
 self_modulate = Color(1, 1, 1, 0.4392157)
-offset_top = 149.0
-offset_right = 246.0
-offset_bottom = 176.0
+offset_left = 393.0
+offset_right = 639.0
+offset_bottom = 27.0
 theme_override_colors/font_color = Color(0.95, 0.95, 0.95, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
@@ -189,5 +190,8 @@ offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_8o1xb")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

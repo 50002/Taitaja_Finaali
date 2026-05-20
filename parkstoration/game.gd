@@ -42,7 +42,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	
 	if player1 and player2:
-		print((player1.position.y + player2.position.y)/2)
+		
 		$Camera2D.global_position.y = max(min(100, (player1.position.y + player2.position.y)/2 -200), -300)
 	if GameManager.Tasks == {"Pick up trash": true, "Replace Invasive flowers with native ones": true, "Fix the shelter": true, "Fully unblock the forest path": true}:
 		get_tree().change_scene_to_file("res://Menu/win.tscn")

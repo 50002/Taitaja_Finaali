@@ -3,9 +3,10 @@ extends CharacterBody2D
 @onready var interaction: Area2D = $Interaction
 @export_enum("Repair", "Exterminator") var Role
 @onready var timer: Timer = $Timer
+@onready var walk: AnimatedSprite2D = $WALK/AnimatedSprite2D
 
 
-const SPEED = 200.0
+var SPEED = 200.0
 enum STATE {
 	IDLE,
 	MOVING,
@@ -21,6 +22,7 @@ func _ready() -> void:
 		1:
 			self.modulate = Color.RED
 			interaction.set_collision_layer_value(16, true)
+			SPEED = 250.0
 			
 	for child in get_children():
 		if child.has_method("initialize"):
@@ -29,6 +31,8 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	var direction := Input.get_vector("LEFT","RIGHT","UP","DOWN")
+	
 	match player_state:
 		STATE.IDLE:
 			timer.stop()
@@ -36,14 +40,26 @@ func _physics_process(delta: float) -> void:
 		STATE.MOVING:
 			if timer.is_stopped():
 				timer.start()
-			A.play("MOVING")
+			if Input.is_action_pressed("RIGHT"):
+				print("A")
+				A.flip_h = false
+				A.play("MOVING_SIDE")
+			elif Input.is_action_pressed("LEFT"):
+				print("B")
+				A.flip_h = true
+				A.play("MOVING_SIDE")
+			elif Input.is_action_pressed("UP"):
+				print("C")
+				A.play("MOVING_UP")
+			else:
+				A.play("MOVING_DOWN")
+			
 		STATE.INTERACT:
 			timer.stop()
 			A.play("INTERACTING")
 	
 	if movement() and player_state != STATE.INTERACT:
 		player_state = STATE.MOVING
-		var direction := Input.get_vector("LEFT","RIGHT","UP","DOWN")
 		direction = direction.normalized()
 		if direction:
 			velocity = direction * SPEED

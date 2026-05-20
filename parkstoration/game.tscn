@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cmjqpbuqmh0pn" path="res://Matias/UI.tscn" id="8_j5wjh"]
 
 [node name="Game" type="Node2D" unique_id=691730007]
-texture_filter = 1
+texture_filter = 5
 script = ExtResource("1_j5wjh")
 
 [node name="Map" parent="." unique_id=1067666997 instance=ExtResource("1_e2o6t")]
@@ -34,7 +34,7 @@ position = Vector2(597, 12)
 
 [node name="CanvasLayer" parent="." unique_id=22516259 instance=ExtResource("8_j5wjh")]
 
-[node name="players" type="Node" parent="." unique_id=38906700]
+[node name="players" type="Node2D" parent="." unique_id=109985038]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=234144629]
 offset = Vector2(320, 160)

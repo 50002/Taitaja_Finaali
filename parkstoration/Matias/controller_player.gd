@@ -7,7 +7,7 @@ extends CharacterBody2D
 
 var correct : bool
 
-const SPEED = 200.0
+var SPEED = 200.0
 enum STATE {
 	IDLE,
 	MOVING,
@@ -23,6 +23,7 @@ func _ready() -> void:
 		1:
 			self.modulate = Color.RED
 			interaction.set_collision_layer_value(16, true)
+			SPEED = 250.0
 			
 	for child in get_children():
 		if child.has_method("initialize"):
@@ -39,7 +40,19 @@ func _physics_process(delta: float) -> void:
 		STATE.MOVING:
 			if timer.is_stopped():
 				timer.start()
-			A.play("MOVING")
+			if Input.is_action_pressed("C_RIGHT"):
+				print("A")
+				A.flip_h = false
+				A.play("MOVING_SIDE")
+			elif Input.is_action_pressed("C_LEFT"):
+				print("B")
+				A.flip_h = true
+				A.play("MOVING_SIDE")
+			elif Input.is_action_pressed("C_UP"):
+				print("C")
+				A.play("MOVING_UP")
+			else:
+				A.play("MOVING_DOWN")
 		STATE.INTERACT:
 			timer.stop()
 			A.play("INTERACTING")

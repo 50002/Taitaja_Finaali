@@ -12,7 +12,7 @@ signal fail
 
 var min : int = 2
 var sec : int = 00
-var time : int = 120
+var time : int = 90
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 

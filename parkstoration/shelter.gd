@@ -29,9 +29,11 @@ func _process(delta: float) -> void:
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 		if area.name == "Interaction":
-			Player_in_range = true
+			if area.get_collision_layer_value(15) == true:
+				Player_in_range = true
 
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
 		if area.name == "Interaction":
-			Player_in_range = false
+			if area.get_collision_layer_value(15) == true:
+				Player_in_range = true
