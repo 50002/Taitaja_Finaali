@@ -33,3 +33,5 @@ position = Vector2(595, 282)
 position = Vector2(597, 12)
 
 [node name="CanvasLayer" parent="." unique_id=22516259 instance=ExtResource("8_j5wjh")]
+
+[node name="players" type="Node" parent="." unique_id=38906700]
