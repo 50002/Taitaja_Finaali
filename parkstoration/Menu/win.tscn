@@ -40,7 +40,7 @@ grow_vertical = 2
 [node name="Label" type="Label" parent="ColorRect/VBoxContainer" unique_id=788489107]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
-text = "You cleaned up the park on time."
+text = "You cleaned up the forest park on time."
 
 [node name="Button" type="Button" parent="ColorRect/VBoxContainer" unique_id=1399283893]
 layout_mode = 2

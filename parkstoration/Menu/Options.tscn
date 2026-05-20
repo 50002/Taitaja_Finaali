@@ -1,16 +1,18 @@
 [gd_scene format=3 uid="uid://biw5fe87u6nfc"]
 
 [ext_resource type="Script" uid="uid://chhmbmqul4oa6" path="res://Menu/options.gd" id="1_4vanb"]
+[ext_resource type="Theme" uid="uid://baoxle8m6yjef" path="res://Matias/text.tres" id="1_lg0h4"]
 [ext_resource type="AudioStream" uid="uid://b882c6pxp000l" path="res://Audio/UIClick_INTERFACE-Metallic Click_HY_PC-006.wav" id="2_ty45b"]
 [ext_resource type="AudioStream" uid="uid://hv8widkrpu1g" path="res://Audio/UIClick_INTERFACE-Metallic Click_HY_PC-003.wav" id="3_lg0h4"]
 
-[node name="Control" type="Control" unique_id=2076669759]
+[node name="Control2" type="Control" unique_id=2076669759]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_lg0h4")
 script = ExtResource("1_4vanb")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=307473349]
@@ -47,12 +49,13 @@ text = "Volume"
 custom_minimum_size = Vector2(100, 20)
 layout_mode = 2
 focus_neighbor_top = NodePath("../back")
-min_value = -10.0
+min_value = -30.0
 max_value = 10.0
 
 [node name="OptionButton" type="OptionButton" parent="ColorRect/Container/VBoxContainer" unique_id=879070928]
 layout_mode = 2
 selected = 0
+allow_reselect = true
 item_count = 2
 popup/item_0/text = "Use one controller, one keyboard"
 popup/item_0/id = 0
@@ -77,6 +80,7 @@ wait_time = 0.2
 [connection signal="drag_ended" from="ColorRect/Container/VBoxContainer/bgm" to="." method="_on_bgm_drag_ended"]
 [connection signal="focus_exited" from="ColorRect/Container/VBoxContainer/bgm" to="." method="_on_bgm_focus_exited"]
 [connection signal="value_changed" from="ColorRect/Container/VBoxContainer/bgm" to="." method="_on_bgm_value_changed"]
+[connection signal="focus_exited" from="ColorRect/Container/VBoxContainer/OptionButton" to="." method="_on_option_button_focus_exited"]
 [connection signal="item_selected" from="ColorRect/Container/VBoxContainer/OptionButton" to="." method="_on_option_button_item_selected"]
 [connection signal="focus_exited" from="ColorRect/Container/VBoxContainer/back" to="." method="_on_back_focus_exited"]
 [connection signal="pressed" from="ColorRect/Container/VBoxContainer/back" to="." method="_on_back_pressed"]

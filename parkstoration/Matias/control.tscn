@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://cepkicfy5t6sq"]
+
+[ext_resource type="Script" uid="uid://c3wpwbxxmfuhe" path="res://control.gd" id="1_830k8"]
+[ext_resource type="Texture2D" uid="uid://b1vc5s551tjsk" path="res://custom sprites/Epic tutorial.png" id="2_xjrxi"]
+[ext_resource type="Theme" uid="uid://baoxle8m6yjef" path="res://Matias/text.tres" id="3_ds3ua"]
+[ext_resource type="AudioStream" uid="uid://b882c6pxp000l" path="res://Audio/UIClick_INTERFACE-Metallic Click_HY_PC-006.wav" id="4_b6ggq"]
+
+[node name="Control" type="Control" unique_id=77472048]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_830k8")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1602785895]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_xjrxi")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="." unique_id=1128195347]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -45.0
+offset_top = -31.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("3_ds3ua")
+text = "Back"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1469402783]
+stream = ExtResource("4_b6ggq")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

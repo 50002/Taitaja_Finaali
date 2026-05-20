@@ -3,10 +3,11 @@ extends CharacterBody2D
 @export_enum("Repair", "Exterminator") var Role
 @onready var A: AnimatedSprite2D = $AnimatedSprite2D
 @onready var interaction: Area2D = $Interaction
+@onready var timer: Timer = $Timer
 
 var correct : bool
 
-const SPEED = 200.0
+var SPEED = 200.0
 enum STATE {
 	IDLE,
 	MOVING,
@@ -22,27 +23,38 @@ func _ready() -> void:
 		1:
 			self.modulate = Color.RED
 			interaction.set_collision_layer_value(16, true)
+			SPEED = 250.0
 			
 	for child in get_children():
 		if child.has_method("initialize"):
 			child.initialize(self)
 	
 
-func _input(event: InputEvent) -> void:
-	print(event.device)
-	if event.device == Role:
-		print(event)
-		correct = true
-	else:
-		correct = false
+
 
 func _physics_process(delta: float) -> void:
 	match player_state:
 		STATE.IDLE:
+			timer.stop()
 			A.play("IDLE")
 		STATE.MOVING:
-			A.play("MOVING")
+			if timer.is_stopped():
+				timer.start()
+			if Input.is_action_pressed("CR2"):
+				print("A")
+				A.flip_h = false
+				A.play("MOVING_SIDE")
+			elif Input.is_action_pressed("CL2"):
+				print("B")
+				A.flip_h = true
+				A.play("MOVING_SIDE")
+			elif Input.is_action_pressed("CU2"):
+				print("C")
+				A.play("MOVING_UP")
+			else:
+				A.play("MOVING_DOWN")
 		STATE.INTERACT:
+			timer.stop()
 			A.play("INTERACTING")
 		
 			
@@ -71,3 +83,7 @@ func movement():
 		if Input.is_action_pressed(i):
 			return true
 	return false
+
+
+func _on_timer_timeout() -> void:
+	$Timer/AudioStreamPlayer.play()

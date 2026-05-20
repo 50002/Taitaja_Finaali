@@ -44,3 +44,13 @@ func _on_options_timer_timeout() -> void:
 
 func _on_start_timer_timeout() -> void:
 	get_tree().change_scene_to_file("res://Menu/load_screen.tscn")
+
+
+func _on_tutorial_pressed() -> void:
+	pick.play()
+	await get_tree().create_timer(0.2).timeout
+	get_tree().change_scene_to_file("res://Matias/control.tscn")
+
+
+func _on_tutorial_focus_exited() -> void:
+	move.play()

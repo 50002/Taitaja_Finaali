@@ -10,7 +10,10 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Player_in_range and (Input.is_action_just_pressed("INTERACTION") or Input.is_action_just_pressed("C_INTERACT") or Input.is_action_just_pressed("CI2")):
 		GameManager.TrasH_Left -= 1
+		$AudioStreamPlayer.play()
+		await get_tree().process_frame
 		queue_free()
+		
 
 
 
